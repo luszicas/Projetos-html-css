@@ -1,0 +1,196 @@
+/* ==========================================================================
+   ARQUIVO: responsive.css
+   Contém: Ajustes para Tablet, Mobile e Correções de Layout
+   ========================================================================== */
+
+/* --- TABLET E LAPTOP PEQUENO (max-width: 1200px) --- */
+@media (max-width: 1200px) {
+    .properties-grid {
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 40px;
+    }
+}
+
+/* --- TABLET PORTRAIT (max-width: 992px) --- */
+@media (max-width: 992px) {
+    /* Header & Nav */
+    .header { top: 15px; width: 95%; padding: 10px 0; }
+    .header-content { flex-direction: column; gap: 15px; text-align: center; }
+    .logo { border-right: none; padding-right: 0; border-bottom: 1px solid rgba(197, 157, 95, 0.3); padding-bottom: 10px; width: 100%; }
+    .nav { gap: 15px; flex-wrap: wrap; justify-content: center; }
+
+    /* Fontes e Grids */
+    .hero-title { font-size: 52px; }
+    .section-title { font-size: 42px; }
+    .container { padding: 0 30px; }
+    .footer-content { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+    .properties-grid { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px; }
+    
+    /* Página Sobre - Ocultar Imagem da História */
+    .historia-imagem { display: none !important; }
+    .historia-content { grid-template-columns: 1fr; gap: 0; text-align: center; }
+    .historia-text .lead { border-left: none; padding-left: 0; font-size: 22px; }
+    .historia-label { margin-left: auto; margin-right: auto; letter-spacing: 3px; }
+    .historia-section::before { display: none; }
+    
+    /* Grids Internos */
+    .valores-grid, .equipe-grid, .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
+    .valor-card { padding: 40px 25px; }
+    .stat-item { border-right: none; border-bottom: 1px solid rgba(197, 157, 95, 0.2); padding: 40px 0; }
+    .stat-item:nth-last-child(-n+2) { border-bottom: none; }
+    .about-stats { grid-template-columns: 1fr; border: none; }
+    .about-section .section-title { font-size: 48px; }
+    .about-section::before { font-size: 200px; }
+
+    /* Página Contato */
+    .contato-wrapper { grid-template-columns: 1fr; box-shadow: none; }
+    .contato-info { padding: 60px 30px; }
+    .contato-info::before { width: 100%; height: 6px; bottom: auto; }
+    .contato-form { padding: 60px 30px; }
+    .mapa-section { padding: 0; }
+    .mapa-placeholder { outline: none; border: none; height: 350px; }
+}
+
+/* --- MOBILE (max-width: 768px) --- */
+@media (max-width: 768px) {
+    /* Layout Geral */
+    .container { padding: 0 20px; }
+    .nav { gap: 20px; }
+    .nav a { font-size: 11px; }
+
+
+
+    .hero-interno {
+        background-attachment: scroll; 
+        height: 80vh; 
+        background-position: center center;
+        
+        /* VOLTA A IMAGEM ANTIGA SÓ NO CELULAR */
+       background-image: url('../img/imagem-home2.jpg');
+    }
+    /* Hero Responsive */
+    .hero, .hero-interno {
+        height: auto;
+        min-height: 80vh; 
+        background-attachment: scroll; 
+        background-position: center center;
+        padding-top: 140px; 
+        padding-bottom: 60px;
+    }
+    .hero-title, .hero-interno .hero-title { font-size: 48px; }
+    .hero-subtitle, .hero-interno .hero-subtitle { font-size: 12px; padding: 10px 20px; }
+
+    /* --- AJUSTE COMPACTO: SEÇÃO DE BUSCA ("NOSSO ACERVO") --- */
+    /* Reduzimos o padding geral da seção */
+    .search-section {
+        padding: 50px 0 40px; 
+    }
+    
+    /* Título menor */
+    .section-title, .valores-section .section-title { 
+        font-size: 32px; /* Reduzido de 36px */
+        margin-bottom: 10px;
+    }
+    
+    /* Subtítulo mais colado no título e no input */
+    .section-subtitle { 
+        font-size: 16px; /* Reduzido de 18px */
+        margin-bottom: 30px; /* Reduzido drasticamente de 70px */
+        line-height: 1.4;
+    }
+    
+    /* Caixa de busca mais compacta */
+    .search-box {
+        margin-bottom: 25px; /* Reduzido de 40px */
+    }
+    
+    .search-box input {
+        font-size: 16px; /* Letra menor no input */
+        padding: 10px 5px;
+    }
+    
+    /* Filtros mais juntos */
+    .filter-group { 
+        flex-direction: column; 
+        align-items: center; /* Centralizado fica melhor visualmente aqui */
+        gap: 10px; /* Menos espaço entre botões */
+    }
+    
+    .filter-label {
+        margin-bottom: 5px;
+        font-size: 10px;
+    }
+    
+    .btn-clear { 
+        margin-left: 0; 
+        margin-top: 15px; 
+        font-size: 14px;
+    }
+
+    /* --- RESTANTE DO LAYOUT --- */
+    .equipe-section .section-title { font-size: 36px; }
+    .equipe-section .section-subtitle { font-size: 18px; margin-bottom: 40px; }
+
+    .properties-grid, .valores-grid, .equipe-grid, .stats-grid, .footer-content { 
+        grid-template-columns: 1fr; 
+        gap: 35px; 
+    }
+    .valores-grid { max-width: 500px; margin: 0 auto; }
+
+    /* Stats Borders */
+    .stat-item { border-bottom: 1px solid rgba(197, 157, 95, 0.2); }
+    .stat-item:last-child { border-bottom: none; }
+
+    /* CTA */
+    .cta-section .container { padding: 40px 20px; border-width: 1px; }
+    .cta-section h2 { font-size: 28px; }
+    .cta-section p { font-size: 16px; margin-bottom: 30px; }
+
+    /* --- CORREÇÃO DO MODAL (FIX) --- */
+    /* Permite scroll e impede corte de conteúdo */
+    .modal.show {
+        align-items: flex-start; /* Alinha no topo, não no centro */
+        overflow-y: auto; /* Permite rolar a tela escura */
+        padding: 10px 0; /* Espaço para não colar no topo */
+    }
+
+    .modal-content {
+        margin: 20px auto; /* Garante espaço para scrollar */
+        width: 90%;
+        max-width: 400px;
+        padding: 30px 20px;
+        height: auto; /* Altura automática baseada no conteúdo */
+        position: relative;
+    }
+
+    .modal-close {
+        top: 10px;
+        right: 15px;
+        font-size: 28px;
+    }
+    
+    .modal-title {
+        font-size: 24px; /* Título menor para caber */
+        margin-bottom: 10px;
+    }
+    
+    .modal-subtitle {
+        font-size: 14px;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+    
+    /* Inputs do Modal no Mobile */
+    .form-group label { font-size: 11px; margin-bottom: 5px; }
+    .form-group input, .form-group select, .form-group textarea { padding: 12px; font-size: 14px; }
+    .form-group { margin-bottom: 15px; }
+}
+
+/* --- MOBILE PEQUENO (max-width: 480px) --- */
+@media (max-width: 480px) {
+    .logo h1 { font-size: 20px; }
+    .hero-title, .hero-interno .hero-title { font-size: 34px; }
+    .property-title { font-size: 22px; }
+    .property-price { font-size: 26px; }
+    .stat-number { font-size: 42px; }
+}

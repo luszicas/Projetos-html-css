@@ -1,0 +1,210 @@
+/* ======================================================
+   RESPONSIVO GERAL (TABLET E MOBILE) - ATÉ 991px
+   ====================================================== */
+@media (max-width: 991px) {
+
+    /* #region Estrutura Geral */
+    body {
+        padding-top: 0;
+    }
+
+    main {
+        padding-top: 100px;
+    }
+
+    .section {
+        padding: 60px 0;
+    }
+    /* #endregion */
+
+    /* #region Navbar */
+    .navbar {
+        width: 95%;
+        top: 15px;
+        padding: 15px 20px;
+        border: 1px solid rgba(0, 224, 255, 0.1);
+    }
+
+    .navbar-collapse {
+        padding: 20px;
+        border-radius: 15px;
+        margin-top: 10px;
+        border: 1px solid rgba(255,255,255,0.05);
+    }
+    /* #endregion */
+
+    /* #region Home */
+    #home {
+        padding-top: 20px !important;
+        height: auto;
+        min-height: auto;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #home .row {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    #home .col-lg-7 {
+        order: 1;
+        width: 100%;
+        padding: 0 15px;
+    }
+
+    #home h1 {
+        font-size: 2.2rem;
+        justify-content: center;
+    }
+
+    .social-links {
+        align-items: center;
+        width: 100%;
+    }
+
+    .social-top, 
+    .skills {
+        justify-content: center;
+        width: 80%;
+    }
+
+    #home .col-lg-5 {
+        order: 2; 
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+
+    .photo {
+        width: 380px; 
+        height: 330px;
+        margin: 60px auto 30px auto; 
+    }
+    /* #endregion */
+
+    /* #region Sobre */
+    .box-info-about {
+        flex-direction: column;
+        padding: 0 15px;
+        gap: 30px;
+    }
+
+    .info-about {
+        width: 100%;
+        max-width: 100%;
+        padding: 30px;
+    }
+    /* #endregion */
+
+    /* #region Projetos */
+    .box-projects {
+        flex-direction: column;
+        gap: 40px;
+        margin-bottom: 40px;
+    }
+
+    .project {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        min-height: auto;
+        display: flex;
+        flex-direction: column;
+        background-color: transparent;
+        box-shadow: none;
+        margin: 0;
+    }
+
+   .project img {
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
+    
+    /* --- CORREÇÃO AQUI --- */
+    position: static; /* Reseta o 'absolute' do desktop, fazendo a imagem ocupar espaço real */
+    transform: none;  /* Garante que ela não tente se mover */
+}
+    .info-project {
+        position: relative;
+        transform: none;
+        left: auto;
+        bottom: auto;
+        right: auto;
+        
+        width: 100%;
+        height: auto;
+        
+        background-color: #0b0f14;
+        border: 1px solid rgba(255,255,255,0.1);
+        border-top: none;
+        border-radius: 0 0 20px 20px;
+        
+        padding: 20px 10px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    }
+
+    .info-project h2 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+        position: static;
+    }
+
+    .info-project .btn-project {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .project:hover {
+        transform: none;
+    }
+    
+    .project:hover img {
+        transform: none;
+    }
+    /* #endregion */
+
+    /* #region Contato */
+    #contact {
+        padding-top: 60px;
+        padding-bottom: 100px;
+    }
+
+    .form-contact {
+        width: 95%;
+        padding: 30px 15px;
+    }
+
+    .box-contact .campo-form {
+        width: 100%;
+    }
+    
+    .form-contact button {
+        width: 100%;
+    }
+    /* #endregion */
+}
+
+/* #region Mobile Pequeno (Max 480px) */
+/* ======================================================
+   AJUSTES EXTRAS PARA CELULARES PEQUENOS
+   ====================================================== */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem !important;
+    }
+    
+    .photo {
+        width: 240px;
+        height: 240px;
+    }
+    
+    .btn-project button a {
+        font-size: 0.9rem;
+    }
+}
+/* #endregion */

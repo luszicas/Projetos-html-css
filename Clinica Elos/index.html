@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Clínica Elos - Psicologia e Bem-estar</title>
+        <link rel="icon" href="Img/logo1.webp" type="image/webp">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap"
+            rel="stylesheet">
+            
+        <link rel="stylesheet" href="CSS/styles.css">
+        <link rel="stylesheet" href="CSS/animation.css">
+    </head>
+</head>
+
+<body>
+    <!-- Navbar Flutuante  -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#inicio" class="nav-brand">
+                <img src="Img/logo1.webp" alt="Logo Clínica Elos" class="nav-logo">
+                Clínica Elos
+            </a>
+
+            <div class="mobile-menu-icon" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+
+            <ul class="nav-menu">
+                <li><a href="#inicio" onclick="toggleMenu()">Início</a></li>
+                <li><a href="#sobre" onclick="toggleMenu()">Sobre</a></li>
+                <li><a href="#especialidades" onclick="toggleMenu()">Especialidades</a></li>
+                <li><a href="#contato" onclick="toggleMenu()">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Cuidar é criar Elos!</h1>
+            <p>Na Clínica Elos, unimos ciência, sensibilidade e ética para oferecer um espaço de escuta, acolhimento e
+                cuidado psicológico.</p>
+            <p class="hero-subtitle">Atendimento Presencial e Online</p>
+            <a href="#" id="btn-hero-whatsapp" class="btn-primary" target="_blank" >Vamos Conversar</a>
+        </div>
+    </section>
+
+    <!-- Sobre Section -->
+    <section id="sobre" class="section">
+        <div class="container">
+            <h2 class="section-title reveal">Sobre</h2>
+           <div class="sobre-content reveal">
+                <p>A Clínica Elos é um espaço dedicado ao cuidado humano e à promoção da saúde emocional, cognitiva e
+                    comportamental.</p>
+                <p>Atuamos de forma integrada e fundamentada em evidências científicas, oferecendo atendimentos
+                    personalizados que respeitam as singularidades e necessidades de cada pessoa.
+
+                    Nosso compromisso é proporcionar um ambiente acolhedor, ético e transparente, fortalecendo os elos
+                    entre ciência, empatia e cuidado.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quem Somos Section -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2 class="section-title reveal">Quem Somos</h2>
+
+            <div class="psychologist-card">
+                <div class="psychologist-img reveal">
+                    <img src="Img/PERFIL-KATIA.webp" alt="Dra. Katia Lopes">
+                </div>
+                <div class="psychologist-info reveal">
+                    <h3>Psi Katia Lopes – CRP 06/203495</h3>
+                    <p>
+                        Psicóloga formada pela FMU, com especialização em Terapia Cognitivo-Comportamental (TCC) pela
+                        CETCC
+                        e pós-graduação em Neuropsicologia. Possui trajetória interdisciplinar em Biologia e Recursos
+                        Humanos,
+                        com mais de oito anos de experiência no desenvolvimento e gestão de pessoas.
+                    </p>
+                    <p>
+                        Atua no atendimento de adultos e adolescentes, com foco em autoconhecimento, equilíbrio
+                        emocional
+                        e fortalecimento da saúde mental, sempre guiada pela escuta empática, ética profissional e
+                        práticas
+                        baseadas em evidências.
+                    </p>
+                </div>
+            </div>
+
+            <div class="psychologist-card psychologist-card-reverse">
+                <div class="psychologist-img reveal">
+                    <img src="Img/PERFIL-Dayse.webp" alt="Dra. Dayse Monteiro">
+                </div>
+                <div class="psychologist-info reveal">
+                    <h3>Psi Dayse Monteiro – CRP 06/100793</h3>
+                    <p>
+                        Psicóloga com 16 anos de experiência clínica, atuando com crianças, adolescentes e adultos.
+                        Possui formação em Psicanálise e abordagem atual em Terapia Cognitivo-Comportamental (TCC),
+                        unindo autoconhecimento profundo e intervenções práticas.
+                    </p>
+                    <p>
+                        Pós-graduada em Neuropsicologia pelo CETCC, realiza atendimentos e avaliações com foco em
+                        intervenções estratégicas, baseadas em evidências, buscando promover clareza, equilíbrio
+                        emocional e qualidade de vida.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Especialidades Section -->
+    <section id="especialidades" class="section">
+        <div class="container">
+            <h2 class="section-title">Nossas Especialidades</h2>
+            <div class="cards-grid">
+                <div class="card reveal-left">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-2.5 2.5h-.5A4.5 4.5 0 0 1 4.5 17.5v-.5A2.5 2.5 0 0 1 2 14.5v-.5A4.5 4.5 0 0 1 6.5 9.5h.5A2.5 2.5 0 0 1 9.5 7v-5Z" />
+                            <path
+                                d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 2.5 2.5h.5A4.5 4.5 0 0 0 19.5 17.5v-.5A2.5 2.5 0 0 0 22 14.5v-.5A4.5 4.5 0 0 0 17.5 9.5h-.5A2.5 2.5 0 0 0 14.5 7v-5Z" />
+                            <path d="M9.5 7a2.5 2.5 0 0 1 5 0" />
+                            <path d="M9.5 17a2.5 2.5 0 0 1 5 0" />
+                        </svg>
+                    </div>
+                    <h3>Psicoterapia Cognitivo-Comportamental (TCC)</h3>
+                    <p>A Psicoterapia Cognitivo-Comportamental (TCC) é uma abordagem terapêutica reconhecida pela sua
+                        base científica e eficácia no manejo de pensamentos, emoções e comportamentos.
+                    </p>
+                    <br>
+                    <p>Na Clínica Elos, oferecemos psicoterapia TCC para crianças, adolescentes e adultos, em um espaço
+                        acolhedor e seguro. O processo terapêutico auxilia no autoconhecimento, na regulação emocional e
+                        no desenvolvimento de estratégias para lidar com desafios do dia a dia.
+                    </p>
+                </div>
+
+                <div class="card reveal">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+                            <path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27" />
+                        </svg>
+                    </div>
+                    <h3>Avaliação Neuropsicológica</h3>
+                    <p>A Avaliação Neuropsicológica é um processo clínico detalhado que investiga funções cognitivas,
+                        emocionais e comportamentais, permitindo compreender como o cérebro processa informações e
+                        influencia o comportamento.</p>
+                    <br>
+                    <p>Na Clínica Elos, utilizamos testes padronizados e técnicas validadas cientificamente, conduzidos
+                        com ética, empatia e sigilo profissional. O objetivo é compreender o perfil cognitivo e auxiliar
+                        em processos de diagnóstico, reabilitação e acompanhamento terapêutico.
+                    </p>
+                </div>
+
+                <div class="card reveal-right">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                        </svg>
+                    </div>
+                    <h3>Avaliação Psicológica</h3>
+                    <p>A Avaliação Psicológica é um processo técnico e ético que busca compreender aspectos emocionais,
+                        comportamentais e de personalidade, por meio de entrevistas, observações e testes psicológicos
+                        validados.</p>
+                    <br>
+                    <p>Na Clínica Elos, cada avaliação é conduzida com respeito, sensibilidade e confidencialidade,
+                        oferecendo uma compreensão profunda sobre o funcionamento psicológico e o contexto de vida de
+                        cada pessoa.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Motivos Section -->
+    <section class="section section-alt">
+    <div class="container">
+        <h2 class="section-title">Quando Buscar Ajuda?</h2>
+        <p class="section-intro">A psicoterapia pode ser benéfica em diversos momentos da vida. Alguns sinais de que pode ser hora de buscar apoio profissional:</p>
+        
+        <div class="reasons-grid">
+            <div class="reason-item reveal-left">
+                <div class="reason-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div class="reason-content">
+                    <h3>Ansiedade, Pânico e Fobias</h3>
+                    <p>Aprenda a lidar com os sintomas, identificar gatilhos e recuperar o controle da sua mente e do seu corpo.</p>
+                </div>
+            </div>
+
+            <div class="reason-item reveal-right">
+                <div class="reason-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div class="reason-content">
+                    <h3>Depressão e Alterações de Humor</h3>
+                    <p>Encontre o caminho para restaurar sua motivação, resgatar o prazer nas atividades e estabilizar o estado emocional.</p>
+                </div>
+            </div>
+
+            <div class="reason-item reveal-left">
+                <div class="reason-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div class="reason-content">
+                    <h3>Questões de Autoestima</h3>
+                    <p>Fortaleça a percepção sobre si mesmo, valorize suas qualidades e construa uma autoconfiança sólida e duradoura.</p>
+                </div>
+            </div>
+
+            <div class="reason-item reveal-right">
+                <div class="reason-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div class="reason-content">
+                    <h3>Estresse, Esgotamento e TOC</h3>
+                    <p>Desenvolva estratégias para gerenciar a pressão do dia a dia, prevenir o burnout e reduzir pensamentos intrusivos.</p>
+                </div>
+            </div>
+
+            <div class="reason-item reveal-left">
+                <div class="reason-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div class="reason-content">
+                    <h3>Dificuldades de Relacionamento</h3>
+                    <p>Melhore sua comunicação, estabeleça limites saudáveis e construa laços familiares, amorosos e interpessoais mais satisfatórios.</p>
+                </div>
+            </div>
+
+            <div class="reason-item reveal-right">
+                <div class="reason-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div class="reason-content">
+                    <h3>Avaliação Neuropsicológica</h3>
+                    <p>Obtenha um diagnóstico preciso sobre memória, atenção e funções executivas, e planeje a reabilitação cognitiva mais eficaz.</p>
+                </div>
+            </div>
+
+            <div class="reason-item reveal-left">
+                <div class="reason-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div class="reason-content">
+                    <h3>Transtornos do Neurodesenvolvimento</h3>
+                    <p>Avaliação e intervenção especializada para identificar e manejar o TDAH, Transtornos de Aprendizagem e desafios do TEA.</p>
+                </div>
+            </div>
+
+            <div class="reason-item reveal-right">
+                <div class="reason-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div class="reason-content">
+                    <h3>Orientação Vocacional e Laudos</h3>
+                    <p>Receba apoio para decisões importantes de carreira e vida, além de laudos e pareceres psicológicos para exigências institucionais.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Ambiente Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Ambiente de Acolhimento</h2>
+            <div class="gallery-grid">
+    <img src="Img/ambiente1.webp" alt="Ambiente 1" class="reveal">
+    <img src="Img/ambiente 2.webp" alt="Ambiente 2" class="reveal">
+    <img src="Img/ambiente3.webp" alt="Ambiente 3" class="reveal">
+    <img src="Img/ambiente4.webp" alt="Ambiente 4" class="reveal">
+    <img src="Img/ambiente6.webp" alt="Ambiente 6" class="reveal">
+    <img src="Img/ambiente5.webp" alt="Ambiente 5" class="reveal">
+</div>
+        </div>
+    </section>
+
+    <!-- Depoimentos Section -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2 class="section-title reveal">O que Dizem Nossos Pacientes</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial reveal">
+                    <p>"A Kátia é perfeita! Vai te escutar, caminha junto contigo, te entender e te ajudar em tudo! Ela
+                        te ensina no tratamento, deixando a vida mais leve e feliz. Confie nela e passe a confiar em si
+                        também! Tua vida vai mudar!"</p>
+                    <strong>— Giovanna Finato Niscolo</strong>
+                </div>
+                <div class="testimonial reveal">
+                    <p>"Superou minhas expectativas como profissional da área da saúde. Ótima psicóloga."</p>
+                    <strong>— Rafael Josefh</strong>
+                </div>
+                <div class="testimonial reveal">
+                    <p>"A Dayse é simplesmente maravilhosa! Fiz tratamento com ela por cerca de 2 anos e ela me ajudou
+                        demais em diversas questões. É uma profissional excelente e muito acolhedora. Recomendo de olhos
+                        fechados!"</p>
+                    <strong>— Lucas Huerdo</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato Section -->
+    <section id="contato" class="section">
+        <div class="container reveal">
+            <h2 class="section-title">Entre em Contato</h2>
+            <div class="contact-wrapper">
+                <form class="contact-form" onsubmit="return handleSubmit(event)">
+                    <div class="form-group">
+                        <label for="name">Nome</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Como posso ajudar?</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary" target="_blank" >Enviar Mensagem</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+   <footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            
+            <div class="footer-col brand-col">
+                <a href="#" class="footer-logo-link">
+                    <img src="Img/logo1.webp" alt="Clínica Elos" class="footer-logo">
+                </a>
+                <p class="footer-tagline">Cuidar é criar Elos.</p>
+                
+                <div class="social-links">
+                    <a href="https://www.instagram.com/elos.psico/?igsh=MTcwMG5ycWd5aTdyZQ%3D%3D#" target="_blank" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                    <a href="https://api.whatsapp.com/send/?phone=5511996393106&text&type=phone_number&app_absent=0" target="_blank" aria-label="WhatsApp">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-col links-col">
+                <h3>Navegação</h3>
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#sobre">Sobre a Clínica</a></li>
+                    <li><a href="#especialidades">Especialidades</a></li>
+                    <li><a href="#contato">Entre em Contato</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col contact-col">
+                <h3>Fale Conosco</h3>
+                
+                <div class="contact-item">
+                    <div class="icon-box">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    </div>
+                    <div class="info-text">
+                        <a href="tel:11980825123">(11) 98082-5123</a>
+                        <a href="tel:11996393106">(11) 99639-3106</a>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="icon-box">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    </div>
+                    <div class="info-text">
+                        <a href="mailto:clinicaelos@gmail.com">clinicaelos@gmail.com</a>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="icon-box">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    </div>
+                    <div class="info-text">
+                        <p>Seg a Sex: 08h às 20h</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-col address-col">
+    <h3>Localização</h3>
+    <div class="contact-item">
+        <div class="icon-box">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+        </div>
+        <div class="info-text">
+            <p><strong>Edifício East Tower</strong><br>
+            Rua Cantagalo, 692<br>
+            Tatuapé, São Paulo - SP</p>
+            
+            <a href="https://maps.app.goo.gl/cu6eEN3xbLYJPo8Q7" target="_blank" class="map-link">Ver no mapa →</a>
+        </div>
+    </div>
+</div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Clínica Elos. Todos os direitos reservados.</p>
+        </div>
+    </div>
+</footer>
+
+  <script src="JS/menu.js" defer></script>
+    <script src="JS/whatsapp.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,670 @@
+/* #region Variáveis & Base */
+:root {
+    --bg-dark: #0b0f14;
+    --bg-light: #ffffff;
+    --text-dark: #ffffff;
+    --text-light: #0b0f14;
+    --primary: #00e0ff;
+    --color-two: rgb(85, 235, 255);
+    /* Adicionei variaveis que estavam sendo usadas mas não declaradas no root, 
+       ajuste as cores se necessário, ou o código vai buscar o fallback */
+    --bk: #111;
+    /* Exemplo de cor de fundo de containers */
+    --popp: 'Poppins', sans-serif;
+    --raleway: 'Raleway', sans-serif;
+    --quick: 'Quicksand', sans-serif;
+}
+
+* {
+
+    padding: 0;
+    margin: 0;
+    /* Adicionei margin 0 para garantir reset */
+    box-sizing: border-box;
+    /* Importante para o layout não quebrar */
+
+}
+
+span {
+    color: var(--color-two);
+    filter: var(--sat);
+    text-shadow: var(--shadow-two);
+
+}
+
+
+body {
+    font-family: system-ui, sans-serif;
+    transition: background 0.3s, color 0.3s;
+    padding-top: 100px;
+}
+
+/* DARK / LIGHT MODES */
+body.dark {
+    background: var(--bg-dark);
+    color: var(--text-dark);
+}
+
+body.light {
+    background: var(--bg-light);
+    color: var(--text-light);
+}
+
+.brand-color {
+    color: var(--color-two);
+}
+
+.section {
+    padding: 80px 0;
+}
+
+/* #endregion */
+
+/* #region Navbar */
+/* NAVBAR FLUTUANTE (STYLE IPHONE) */
+.navbar {
+    position: fixed;
+    top: 18px;
+
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: calc(100% - 40px);
+    max-width: 1100px;
+
+    background: white;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border-radius: 999px;
+    padding: 10px 26px;
+
+    border: 1px solid rgba(0, 224, 255, 0.35);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.4),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+
+    transition: all 0.3s ease;
+    z-index: 9999;
+}
+
+.navbar .nav-link {
+    color: #e6faff !important;
+    font-weight: 500;
+    padding: 10px 18px;
+    border-radius: 999px;
+    transition: all 0.25s ease;
+}
+
+.navbar .nav-link:hover {
+    background: rgba(0, 224, 255, 0.15);
+    color: #00fff2 !important;
+}
+
+.navbar-nav {
+    align-items: center;
+}
+
+/* Dark Mode Específico da Navbar */
+body.dark .navbar {
+    background-color: #0b1f24;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6);
+}
+
+body.dark .navbar .navbar-brand,
+body.dark .navbar .nav-link {
+    color: #e6faff !important;
+}
+
+body.dark .navbar .nav-link:hover {
+    color: #00fff2 !important;
+}
+
+body.dark .navbar-toggler {
+    border-color: rgba(0, 255, 242, 0.4);
+}
+
+body.dark .navbar-toggler-icon {
+    filter: invert(1);
+}
+
+/* Toggle Switch */
+.theme-toggle {
+    background: none;
+    border: none;
+    color: var(--primary);
+    font-size: 1.3rem;
+    cursor: pointer;
+    background-color: black
+}
+
+
+/* Responsivo Navbar */
+@media (max-width: 991px) {
+    .navbar {
+        padding: 12px 18px;
+        border-radius: 22px;
+    }
+
+    .navbar-collapse {
+        margin-top: 15px;
+    }
+}
+
+/* #endregion */
+
+/* #region Home */
+#home {
+
+    padding-top: 10px !important;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+#home .row {
+    align-items: center;
+}
+
+/* Texto à esquerda */
+#home .col-lg-7 {
+    text-align: left;
+}
+
+/* Subtitle */
+.subtitle {
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+/* Social Links */
+.social-links {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.social-top {
+    display: flex;
+    gap: 18px;
+}
+
+.social-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--color-two);
+    font-size: 1.4rem;
+
+    background: transparent;
+    box-shadow: 0 0 18px rgba(0, 224, 255, 0.35);
+
+    transition: all 0.25s ease;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    background: var(--color-two);
+    color: white;
+    transform: translateY(-4px);
+}
+
+.social-contact {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 12px 26px;
+    border-radius: 999px;
+
+    font-weight: 600;
+    font-size: 0.95rem;
+
+    color: var(--color-two);
+    text-decoration: none;
+
+    box-shadow: 0 0 25px rgba(0, 224, 255, 0.35);
+    transition: all 0.25s ease;
+}
+
+.social-contact:hover {
+    background: var(--color-two);
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* Skills */
+.skills {
+    display: flex;
+    gap: 25px;
+    margin-top: 35px;
+    flex-wrap: wrap;
+    animation: flutuar 8s ease-in-out infinite;
+
+}
+
+.skills img {
+    width: 55px;
+    height: auto;
+    opacity: 0.9;
+    transition: transform 0.3s ease;
+}
+
+.skills img:hover {
+    transform: translateY(-6px);
+
+}
+
+/* Foto Home */
+.photo {
+    width: 520px;
+    height: 520px;
+
+    object-fit: cover;
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 30px rgba(0, 224, 255, 0.4),
+        0 0 80px rgba(0, 224, 255, 0.2);
+    animation: flutuar 3s ease-in-out infinite;
+
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.photo:hover {
+    transform: scale(1.04);
+}
+
+/* Responsivo Home */
+@media (max-width: 991px) {
+    #home .col-lg-7 {
+        text-align: center;
+    }
+
+    .social-links,
+    .social-top,
+    .skills {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .photo {
+        margin: 40px auto 0;
+        display: block;
+    }
+}
+
+/* #endregion */
+
+/* #region About (Sobre) */
+#about {
+    padding-top: 80px;
+    margin-top: 0;
+    padding-bottom: 120px;
+}
+
+.box-about {
+    text-align: center;
+}
+
+.box-about h1 {
+    font-family: var(--popp);
+    font-size: 2em;
+    gap: 15px;
+}
+
+.box-about span {
+    color: var(--color-two);
+    filter: var(--sat);
+    text-shadow: var(--shadow-two);
+}
+
+.box-about:hover span {
+    filter: saturate(100%);
+}
+
+.box-title-about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+
+.box-info-about {
+    display: flex;
+    justify-content: center;
+    gap: 8em;
+    padding: 0 8%;
+    margin-top: 100px;
+    cursor: default;
+}
+
+.box-info-about p {
+    color: rgb(165, 165, 165);
+}
+
+/* Cards Sobre */
+.info-about {
+    width: 400px;
+    background-color: var(--bk);
+    padding: 40px;
+    border-radius: 2em;
+    box-shadow: 1px 1px 20px rgb(0, 99, 99);
+}
+
+.info-about p {
+    font-size: 1em;
+}
+
+.info-about:hover {
+    box-shadow: -15px 10px 30px rgb(65, 165, 165);
+    border-radius: 2.4em;
+    padding-right: 20px;
+    transition: 1s;
+}
+
+.info-about:hover p {
+    color: #fff;
+}
+
+.info-about:hover p span {
+    color: rgb(127, 240, 255);
+}
+
+.info-about:hover p #html {
+    color: rgb(255, 200, 127);
+}
+
+.info-about:hover p #css {
+    color: rgb(127, 255, 185);
+}
+
+.info-about:hover p #js {
+    color: rgb(246, 255, 127);
+}
+
+/* #endregion */
+
+/* #region Projects */
+#projects {
+    padding-top: 60px;
+    margin-top: 0;
+    width: 100%;
+    height: auto;
+    background-color: rgb(19, 23, 27);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    text-align: center;
+    padding-bottom: 30px;
+
+}
+
+.title-projects {
+    padding-bottom: 40px;
+    /* Reduzi um pouco pra ficar mais perto dos cards */
+    margin: 0 auto;
+    /* Centraliza e tira margem de cima */
+    max-width: 800px;
+    /* Garante que o texto descritivo não fique muito largo */
+}
+
+.box-projects {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#projects h1 {
+    font-size: 2em;
+    font-family: var(--popp);
+
+}
+
+#projects span {
+    color: var(--color-two);
+    filter: var(--sat);
+    text-shadow: var(--shadow-two);
+}
+
+.box-projects {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* Card Project Geral */
+.project {
+    width: 100%;
+    background-color: transparent;
+    border-radius: 20px;
+    height: 22em;
+    position: relative;
+    overflow: hidden;
+    margin: 20px;
+}
+
+.project:hover {
+    transition: 1000ms;
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 20px 20px rgba(99, 232, 255, 0.15);
+}
+
+/* Procure esta parte no seu CSS principal */
+.project img {
+    width: 100%;
+    height: auto;
+
+    min-height: 100%;
+    object-fit: cover;
+
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 4s ease-in-out;
+    border-radius: 20px;
+}
+
+.project:hover img {
+
+    transition: transform 4s ease;
+}
+
+.project.mading {
+   
+    pointer-events: none;
+    box-shadow: 0px 0px 10px rgb(87, 87, 87);
+}
+
+/* Informações do Projeto (Overlay) */
+.info-project {
+    font-family: var(--raleway);
+    width: 100%;
+    height: 110px;
+    box-shadow: 0 0 10px black;
+    border-radius: 0 0 18px 18px;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding-top: 15px;
+    font-size: .6em;
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    transform: translateX(50%);
+}
+
+.info-project h2 {
+    font-size: 2.7em;
+}
+
+.info-project .btn-project {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+}
+
+/* Botões do Projeto */
+.btn-project .active {
+    font-weight: 600;
+    font-size: 1.5em;
+    font-family: var(--quick);
+    padding: .5rem;
+    border-radius: 7px;
+    border: none;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.btn-project .active:hover {
+    background-color: var(--color-two);
+    border-radius: 10px;
+    transform: scale(1.1);
+    transition: .2s linear;
+}
+
+.btn-project a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.inactive {
+    pointer-events: none;
+    background-color: rgb(100, 100, 100);
+    font-weight: 600;
+    font-size: 1.5em;
+    font-family: var(--quick);
+    padding: .5rem;
+    border-radius: 7px;
+    border: none;
+}
+
+/* Faixa "Em Produção" */
+.faixa { 
+    position: absolute;
+    z-index: 10;
+    bottom: 70%;
+    left: -50%;
+    width: 150%;
+    text-align: center;
+    background: rgb(255, 251, 32);
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    transform: rotate(-30deg);
+    font-family: sans-serif;
+    font-size: 14px;
+    padding: 5px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* #endregion */
+
+/* #region Contact */
+#contact {
+    padding-top: 160px;
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 160px;
+
+}
+
+.form-contact {
+    background-color: var(--bk);
+    width: 52em;
+    height: auto;
+    text-align: center;
+    border-radius: 1.4em;
+    box-shadow: 0px 0px 50px rgb(0, 221, 221);
+}
+
+.form-contact:hover {
+    box-shadow: 0px 0px 50px rgb(0, 95, 95);
+}
+
+.form-contact h1 {
+    margin: 60px;
+    font-size: 2em;
+    font-family: var(--popp);
+}
+
+.form-contact span {
+    color: var(--color-two);
+    filter: var(--sat);
+    text-shadow: var(--shadow-two);
+}
+
+.box-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.box-contact .campo-form {
+    background-color: rgb(32, 32, 32);
+    border: 1px solid rgb(28, 28, 28);
+    font-family: var(--quick);
+    border-radius: 10px;
+    padding: .8rem;
+    outline: none;
+    color: #fff;
+    font-size: 1em;
+    margin-bottom: 1em;
+    resize: none;
+    width: 700px;
+}
+
+.box-contact .campo-form:focus {
+    border: 1px solid var(--color-two);
+    box-shadow: var(--shadow-two);
+}
+
+/* Placeholder fix se precisar */
+.campo-form-two::placeholder {
+    margin-top: 20px;
+}
+
+.form-contact button {
+    font-family: var(--quick);
+    background-color: transparent;
+    font-size: 1.1em;
+    color: var(--color-two);
+    border: 1px solid var(--color-two);
+    border-radius: 40px;
+    width: 280px;
+    height: 60px;
+    cursor: pointer;
+    filter: var(--sat);
+    margin: 30px;
+}
+
+.form-contact button:hover {
+    box-shadow: var(--shadow-two);
+    color: #000000;
+    background-color: var(--color-two);
+    border: none;
+
+    transition: all 0.25s ease;
+}
+
+/* #endregion */
+
+/* #region Outros / Animações */
+
+
+
+.animation.active {
+    color: var(--color);
+    text-align: var(--shadow);
+}
+
+/* #endregion */

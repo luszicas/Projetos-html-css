@@ -1,0 +1,318 @@
+/* ==============================
+   ANIMAÇÕES GERAIS
+============================== */
+/* ==============================
+   PARTÍCULAS DE FUNDO (O EFEITO QUE VC QUER)
+============================== */
+
+/* Se as variaveis color-three ou color-four nao existirem no seu root, 
+   adicione elas ou troque as cores aqui manualmente */
+:root {
+    /* Cores padrão caso faltem no seu arquivo principal */
+    --color-three: rgb(0, 205, 219); 
+    --color-four: rgb(7, 7, 7);
+}
+
+.particulas {
+    position: fixed;
+    /* Começa 20% da altura da tela PRA CIMA */
+    top: -10vh!important; 
+    left: 0;
+    
+    /* Largura total */
+    width: 100%; 
+    
+    /* Altura de 140% da tela (muito maior que o necessário) */
+    height: 120vh!important; 
+    
+    z-index: -1;
+    opacity: 0.3;
+    pointer-events: none;
+
+    /* O seu gradiente original */
+    background: 
+        radial-gradient(circle at 10% 20%, var(--color-two) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, var(--color-three) 0%, transparent 20%),
+        var(--color-four);
+    
+    /* A animação */
+    animation: flutuando 3s ease-in-out infinite;
+}
+
+/* Efeito de Luz do Mouse (Spotlight) - Opcional se quiser aquele brilho seguindo */
+.spotlight {
+    position: fixed;
+    width: 200px; /* Aumentei um pouco pra ficar visivel */
+    height: 200px;
+    pointer-events: none;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(37, 248, 255, 0.15) 0%, rgba(255,255,255,0) 70%);
+    transform: translate(-50%, -50%);
+    mix-blend-mode: screen; 
+    z-index: 9999;
+}
+
+/* ==============================
+   KEYFRAMES (ANIMAÇÕES)
+============================== */
+
+/* Esse é o movimento de subir e descer das particulas */
+@keyframes flutuando {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(30px); /* Move 30px pra baixo */
+    }
+}
+
+.animation {
+    position: relative;
+}
+
+.animation::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 0;
+    height: 2px;
+    margin-top: 2em;
+    background-color: var(--color);
+    filter: var(--sat);
+    box-shadow: var(--shadow);
+    transition: width 0.4s ease;
+}
+
+.animation:hover::after {
+    width: 70%;
+}
+
+.particulas {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: -1;
+    opacity: .3;
+    background: 
+    radial-gradient(circle at 10% 20%, var(--color-two) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, var(--color-three) 0%, transparent 20%)
+    var(--color-four);
+    animation: flutuando 2s ease-in-out infinite;
+}
+
+
+/* ==============================
+   TEXTO COM DIGITAÇÃO
+============================== */
+
+.text-animation {
+    font-size: 1.1em;
+    font-weight: 900;
+    background: linear-gradient(
+        100deg,
+        cyan,
+        rgb(117, 172, 255),
+        rgb(0, 102, 255),
+        rgb(122, 191, 255)
+    );
+    filter: drop-shadow(5px 2px 15px rgba(0, 255, 221, 0.6));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+
+    border-right: 4px solid #fff;
+
+    animation:
+        cursor .8s infinite,
+        typing 3s infinite alternate;
+
+        
+}
+
+
+
+.text-animation::before {
+    content: "";
+    animation: words 30s infinite;
+}
+
+/* ==============================
+   FOTO FLUTUANDO
+============================== */
+
+.box-introduction .photo {
+    border-radius: 50%;
+    box-shadow: var(--shadow-ft), var(--shadow2-ft);
+    animation: flutuar 3s ease-in-out infinite;
+}
+
+.box-introduction .photo:hover {
+    box-shadow: var(--shadow-ft-hover);
+    transition: .8s;
+}
+
+/* ==============================
+   WAVES (FUNDO)
+============================== */
+
+.waves-animation {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.wave {
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    background-repeat: repeat-x;
+    background-position: 0 bottom;
+}
+
+.wave1 {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgb(0,95,95)" d="M0,160L48,144C96,128,192,96,288,101.3C384,107,480,149,576,181.3C672,213,768,235,864,240C960,245,1056,235,1152,192C1248,149,1344,75,1392,37.3L1440,0V320H0Z"/></svg>');
+    animation: ondaMovendo 20s linear infinite;
+}
+
+.wave2 {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgb(94,255,255)" d="M0,160L48,176C96,192,192,224,288,218.7C384,213,480,171,576,138.7C672,107,768,85,864,80C960,75,1056,85,1152,128C1248,171,1344,245,1392,282.7L1440,320V320H0Z"/></svg>');
+    opacity: .7;
+    animation: ondaMovendo 20s linear infinite reverse;
+}
+
+/* ==============================
+   DARK MODE SWITCH
+============================== */
+
+.switch {
+    font-size: 1.3em;
+    position: relative;
+    width: 3.8em;
+    height: 2em;
+    display: inline-block;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.switch .slider {
+    position: absolute;
+    inset: 0;
+    cursor: pointer;
+    background-color: #0b0f14;
+    border-radius: 30px;
+    transition: .5s;
+    box-shadow: 0 0 10px #00ffea;
+}
+
+.switch .slider::before {
+    content: "";
+    position: absolute;
+    height: 1.4em;
+    width: 1.4em;
+    border-radius: 50%;
+    left: 10%;
+    bottom: 15%;
+    box-shadow: inset 8px -4px 0px 0px #fff000;
+    transition: .5s;
+}
+
+.switch input:checked + .slider {
+    background-color: #00c4b3;
+}
+
+.switch input:checked + .slider::before {
+    transform: translateX(100%);
+    box-shadow: inset 15px -4px 0px 15px #fff000;
+}
+
+/* ==============================
+   KEYFRAMES
+============================== */
+
+@keyframes cursor {
+    50% { border-color: transparent; }
+}
+
+@keyframes typing {
+    0% { width: 0; }
+    100% { width: 100%; }
+}
+
+@keyframes flutuar {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-30px); }
+}
+
+@keyframes ondaMovendo {
+    from { background-position: 0 bottom; }
+    to { background-position: -200% bottom; }
+}
+
+@keyframes words {
+    0%   { content: "Desenvolvedor Web"; }
+    25%  { content: "Desenvolvedor Backend"; }
+    50%  { content: "Web Designer"; }
+    75%  { content: "Apaixonado por tecnologia"; }
+    100% { content: "Front-end Designer"; }
+}
+  .photo-wrapper {
+    position: relative;
+    width: 520px;
+    height: 520px;
+    margin: auto;
+
+    animation: flutuar 3s ease-in-out infinite;
+}
+.photo-wrapper .photo {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+
+    position: relative;
+    z-index: 2;
+}
+.tech-icon {
+    position: absolute;
+    width: 55px;
+    z-index: 1;
+
+    animation: iconFloat 4s ease-in-out infinite;
+    filter: drop-shadow(0 0 10px rgba(0, 224, 255, 0.6));
+}
+.tech-icon.html {
+    top: -10px;
+    left: 60px;
+}
+
+.tech-icon.css {
+    top: 80px;
+    right: -10px;
+}
+
+.tech-icon.js {
+    bottom: 80px;
+    left: -10px;
+}
+
+.tech-icon.figma {
+    bottom: -10px;
+    right: 80px;
+}
+@keyframes iconFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+}

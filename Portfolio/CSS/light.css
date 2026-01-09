@@ -1,0 +1,243 @@
+/* #region Variáveis & Base Light */
+body.light {
+    --shadow: 0px 0px 40px rgb(0, 36, 196);
+    --shadow-two: 0px 0px 40px rgb(0, 36, 196);
+    --shadow-ft: 0px 0px 40px rgba(74, 123, 156, 0.6);
+    --shadow2-ft: 0px 0px 40px rgba(0, 44, 190, 0.6);
+    --shadow-ft-hover: 0px 0px 70px rgb(65, 84, 189);
+
+    --color: rgb(0, 17, 255);
+    --color-two: rgb(0, 33, 223);
+    --color-three: rgb(0, 205, 219);
+    --color-four: rgb(7, 7, 7);
+    --bk: rgba(255, 255, 255, 0.267);
+
+    --sat: saturate(900%);
+
+    background-color: #ffffff;
+    color: #000;
+}
+
+body.light p span {
+    color: var(--color);
+}
+
+body.light .container {
+   
+}
+/* #endregion */
+
+/* #region Navbar & Navegação */
+/* Container da Nav */
+body.light .container nav button {
+    color: #000;
+}
+
+/* Links da Navbar */
+body.light .navbar .nav-link,
+body.light .navbar .nav-link span {
+    color: #1a1a1a !important; /* Forcei para garantir leitura */
+    font-weight: 500;
+}
+
+body.light .navbar .nav-link i {
+    color: #1a1a1a !important;
+}
+
+/* Hover Navbar */
+body.light .navbar .nav-link:hover,
+body.light .navbar .nav-link:hover span {
+    color: var(--color-two) !important;
+}
+
+body.light .navbar .nav-link:hover i {
+    color: var(--color-two) !important;
+}
+
+/* Active Navbar */
+body.light .navbar .nav-link.active,
+body.light .navbar .nav-link.active span {
+    color: var(--color);
+}
+
+/* Sidebar (Menu Mobile) */
+body.light .sidebar {
+    background-color: rgba(15, 15, 15, 0.1);
+}
+
+body.light .sidebar .ri-close-large-line {
+    color: rgb(8, 8, 8);
+}
+
+body.light .sidebar button {
+    color: #0f0f0f;
+}
+
+/* Toggle Switch (Slider) */
+body.light .slider {
+    box-shadow: 0 0 10px #001aff;
+    border: 2px solid rgba(0, 89, 255, 0.6);
+}
+
+body.light input:checked + .slider {
+    background-color: #617ebd;
+}
+/* #endregion */
+
+/* #region Home / Intro */
+body.light .text-animation {
+    background: linear-gradient(100deg, rgb(0, 143, 209), rgb(65, 71, 143), rgb(4, 0, 255), rgb(122, 191, 255));
+    filter: drop-shadow(5px 2px 15px rgba(0, 47, 255, 0.6));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    /* Ajustes para o efeito de digitação */
+    overflow: hidden;
+    white-space: nowrap;    
+    display: inline-block;
+
+    /* Cursor piscando */
+    border-right: 5px solid #000000;
+    animation: cursor .8s infinite, typing 3s infinite alternate;
+}
+
+body.light .box-introduction .photo:hover {
+    box-shadow: var(--shadow-ft-hover);
+}
+
+body.light .info-introduction .plataformas i {
+    border: 1px solid var(--color-two);
+}
+
+body.light .info-introduction .plataformas i:hover {
+    box-shadow: var(--shadow-two);
+    color: #eeeeee;
+    background-color: var(--color-two);
+    border: 1px solid var(--color-two);
+}
+
+body.light .box-introduction button:hover a {
+    color: #fafafa;
+    font-weight: bold;
+}
+
+body.light .skills img {
+    opacity: 90%;
+}
+/* #endregion */
+
+/* #region About (Sobre) */
+body.light .box-info-about p {
+    color: rgb(68, 68, 68);
+}
+
+body.light .info-about:hover {
+    box-shadow: -15px 10px 30px rgb(73, 95, 143);
+}
+
+body.light .info-about:hover p {
+    color: rgb(0, 0, 0);
+}
+
+body.light .info-about:hover p span {
+    color: rgb(0, 17, 255);
+}
+
+body.light .info-about:hover p #html {
+    color: rgb(180, 102, 0);
+}
+
+body.light .info-about:hover p #css {
+    color: rgb(0, 177, 80);
+}
+
+body.light .info-about:hover p #js {
+    color: rgb(154, 165, 0);
+}
+/* #endregion */
+
+/* #region Projects */
+body.light #projects {
+    background-color: var(--bk);
+}
+
+body.light .project:hover {
+    box-shadow: 0 20px 20px rgba(0, 47, 255, 0.527);
+}
+
+body.light .info-project {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+body.light .info-project h2 {
+    color: #0c0c0c;
+}
+
+/* Botões do Projeto */
+body.light .btn-project button {
+    background-color: #313131;
+}
+
+body.light .btn-project button a {
+    color: #e2e2e2;
+}
+
+body.light .btn-project button:hover {
+    background-color: rgb(31, 72, 255);
+}
+
+body.light .btn-project button:hover a {
+    color: #e2e2e2;
+}
+/* #endregion */
+
+/* #region Contact */
+body.light .form-contact {
+    box-shadow: 0px 0px 50px rgb(0, 122, 221);
+}
+
+body.light .form-contact:hover {
+    box-shadow: 0px 0px 50px rgb(0, 83, 138);
+}
+
+body.light .box-contact .campo-form {
+    background-color: rgb(238, 238, 238);
+    border: 1px solid rgb(230, 230, 230);
+    color: #000;
+}
+
+body.light .box-contact .campo-form:focus {
+    border: 1px solid var(--color-two);
+    box-shadow: 0 0 20px rgb(62, 71, 151);
+}
+
+body.light .form-contact button:hover {
+    color: #fafafa;
+}
+/* #endregion */
+
+/* #region Decorativos & Animações */
+body.light .animation.active {
+    color: var(--color);
+    text-align: var(--shadow);
+}
+
+body.light .particulas {
+    background: 
+    radial-gradient(circle at 10% 20%, var(--color-two) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, var(--color-three) 0%, transparent 20%),
+    var(--color-four);
+}
+
+body.light .spotlight {
+    background: radial-gradient(circle, rgb(0, 225, 255) 0%, rgba(255,255,255,0) 70%);
+}
+
+body.light .wave1 {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgb(73, 95, 143)" fill-opacity="1" d="M0,160L48,144C96,128,192,96,288,101.3C384,107,480,149,576,181.3C672,213,768,235,864,240C960,245,1056,235,1152,192C1248,149,1344,75,1392,37.3L1440,0V320H1392C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320H0Z"></path></svg>');
+}
+
+body.light .wave2 {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgb(0, 33, 223)" fill-opacity="1" d="M0,160L48,176C96,192,192,224,288,218.7C384,213,480,171,576,138.7C672,107,768,85,864,80C960,75,1056,85,1152,128C1248,171,1344,245,1392,282.7L1440,320V320H1392C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320H0Z"></path></svg>');
+}
+/* #endregion */
