@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mansões & Propriedades Clássicas | Heritage Properties</title>
+    
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css"> <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>HERITAGE PROPERTIES</h1>
+                    <p class="tagline">Established 1892</p>
+                </div>
+                <nav class="nav">
+                    <a href="#propriedades">Propriedades</a>
+                    <a href="sobre.html">Sobre</a>
+                    <a href="contato.html">Contato</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h2 class="hero-title">Sofisticação que Transcende o Tempo</h2>
+            <p class="hero-subtitle">Propriedades exclusivas para famílias de tradição</p>
+            <div class="hero-divider"></div>
+            <a href="#propriedades" class="btn-primary shimmer-effect">Explorar Acervo</a>
+        </div>
+    </section>
+
+    <section class="search-section" id="propriedades">
+        <div class="container">
+            <h2 class="section-title reveal-on-scroll fade-up">Nosso Acervo Exclusivo</h2>
+            <p class="section-subtitle reveal-on-scroll fade-up delay-100">Seleção curada de propriedades históricas e contemporâneas de alto padrão</p>
+            
+            <div class="search-filters reveal-on-scroll fade-up delay-200">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Buscar por localização...">
+                </div>
+                
+                <div class="filter-group">
+                    <label class="filter-label">Características:</label>
+                    <div class="filter-buttons">
+                        <button class="filter-btn" data-filter="Pé direito duplo">Pé Direito Duplo</button>
+                        <button class="filter-btn" data-filter="Spa">Spa Privativo</button>
+                        <button class="filter-btn" data-filter="Vista">Vista Panorâmica</button>
+                    </div>
+                    <button class="btn-clear" id="clearFilters">Limpar Filtros</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="properties-section">
+        <div class="container">
+            <div class="properties-grid" id="propertiesGrid">
+                
+                <article class="property-card reveal-on-scroll fade-up" data-features="Pé direito duplo,Spa,Vista" data-location="Higienópolis, São Paulo">
+                    <div class="property-image slow-zoom"> <img src="img/imovel-palacete.jpg" alt="Palacete Histórico">
+                    </div>
+                    <div class="property-content">
+                        <h3 class="property-title">Palacete Histórico</h3>
+                        <p class="property-location">Higienópolis, São Paulo</p>
+                        
+                        <div class="property-features">
+                            <span class="feature-tag">Pé direito duplo</span>
+                            <span class="feature-tag">Spa</span>
+                            <span class="feature-tag">Vista</span>
+                        </div>
+                        
+                        <div class="property-specs">
+                            <div class="spec">
+                                <span class="spec-value">7</span>
+                                <span class="spec-label">Suítes</span>
+                            </div>
+                            <div class="spec">
+                                <span class="spec-value">1.200</span>
+                                <span class="spec-label">m²</span>
+                            </div>
+                            <div class="spec">
+                                <span class="spec-value">10</span>
+                                <span class="spec-label">Vagas</span>
+                            </div>
+                        </div>
+                        
+                        <div class="property-price">R$ 18.500.000</div>
+                        
+                        <button class="btn-schedule" onclick="agendarVisita('Palacete Histórico', 'Higienópolis, São Paulo')">
+                            Agende Sua Visita Guiada
+                        </button>
+                    </div>
+                </article>
+
+                <article class="property-card reveal-on-scroll fade-up delay-100" data-features="Pé direito duplo,Vista" data-location="Jardim Europa, São Paulo">
+                    <div class="property-image slow-zoom">
+                        <img src="img/imovel-neoclassico.jpg" alt="Residência Neoclássica">
+                    </div>
+                    <div class="property-content">
+                        <h3 class="property-title">Residência Neoclássica</h3>
+                        <p class="property-location">Jardim Europa, São Paulo</p>
+                        
+                        <div class="property-features">
+                            <span class="feature-tag">Pé direito duplo</span>
+                            <span class="feature-tag">Vista</span>
+                        </div>
+                        
+                        <div class="property-specs">
+                            <div class="spec">
+                                <span class="spec-value">6</span>
+                                <span class="spec-label">Suítes</span>
+                            </div>
+                            <div class="spec">
+                                <span class="spec-value">980</span>
+                                <span class="spec-label">m²</span>
+                            </div>
+                            <div class="spec">
+                                <span class="spec-value">8</span>
+                                <span class="spec-label">Vagas</span>
+                            </div>
+                        </div>
+                        
+                        <div class="property-price">R$ 14.900.000</div>
+                        
+                        <button class="btn-schedule" onclick="agendarVisita('Residência Neoclássica', 'Jardim Europa, São Paulo')">
+                            Agende Sua Visita Guiada
+                        </button>
+                    </div>
+                </article>
+
+                <article class="property-card reveal-on-scroll fade-up delay-200" data-features="Spa,Vista" data-location="Lagoa, Rio de Janeiro">
+                    <div class="property-image slow-zoom">
+                        <img src="img/imovel-mediterraneo.jpg" alt="Villa Mediterrânea">
+                    </div>
+                    <div class="property-content">
+                        <h3 class="property-title">Villa Mediterrânea</h3>
+                        <p class="property-location">Lagoa, Rio de Janeiro</p>
+                        
+                        <div class="property-features">
+                            <span class="feature-tag">Spa</span>
+                            <span class="feature-tag">Vista</span>
+                        </div>
+                        
+                        <div class="property-specs">
+                            <div class="spec">
+                                <span class="spec-value">8</span>
+                                <span class="spec-label">Suítes</span>
+                            </div>
+                            <div class="spec">
+                                <span class="spec-value">1.500</span>
+                                <span class="spec-label">m²</span>
+                            </div>
+                            <div class="spec">
+                                <span class="spec-value">12</span>
+                                <span class="spec-label">Vagas</span>
+                            </div>
+                        </div>
+                        
+                        <div class="property-price">R$ 22.800.000</div>
+                        
+                        <button class="btn-schedule" onclick="agendarVisita('Villa Mediterrânea', 'Lagoa, Rio de Janeiro')">
+                            Agende Sua Visita Guiada
+                        </button>
+                    </div>
+                </article>
+
+                <article class="property-card reveal-on-scroll fade-up" data-features="Pé direito duplo,Spa" data-location="Leblon, Rio de Janeiro">
+                    <div class="property-image slow-zoom">
+                        <img src="img/imovel-leblon.jpg" alt="Apartamento Belle Époque">
+                    </div>
+                    <div class="property-content">
+                        <h3 class="property-title">Apartamento Belle Époque</h3>
+                        <p class="property-location">Leblon, Rio de Janeiro</p>
+                        
+                        <div class="property-features">
+                            <span class="feature-tag">Pé direito duplo</span>
+                            <span class="feature-tag">Spa</span>
+                        </div>
+                        
+                        <div class="property-specs">
+                            <div class="spec">
+                                <span class="spec-value">5</span>
+                                <span class="spec-label">Suítes</span>
+                            </div>
+                            <div class="spec">
+                                <span class="spec-value">520</span>
+                                <span class="spec-label">m²</span>
+                            </div>
+                            <div class="spec">
+                                <span class="spec-value">6</span>
+                                <span class="spec-label">Vagas</span>
+                            </div>
+                        </div>
+                        
+                        <div class="property-price">R$ 16.200.000</div>
+                        
+                        <button class="btn-schedule" onclick="agendarVisita('Apartamento Belle Époque', 'Leblon, Rio de Janeiro')">
+                            Agende Sua Visita Guiada
+                        </button>
+                    </div>
+                </article>
+
+                <article class="property-card reveal-on-scroll fade-up delay-100" data-features="Pé direito duplo,Vista" data-location="Cidade Jardim, São Paulo">
+                    <div class="property-image slow-zoom">
+                        <img src="img/imovel-vitoriana.jpg" alt="Mansão Vitoriana">
+                    </div>
+                    <div class="property-content">
+                        <h3 class="property-title">Mansão Vitoriana</h3>
+                        <p class="property-location">Cidade Jardim, São Paulo</p>
+                        
+                        <div class="property-features">
+                            <span class="feature-tag">Pé direito duplo</span>
+                            <span class="feature-tag">Vista</span>
+                        </div>
+                        
+                        <div class="property-specs">
+                            <div class="spec">
+                                <span class="spec-value">9</span>
+                                <span class="spec-label">Suítes</span>
+                            </div>
+                            <div class="spec">
+                                <span class="spec-value">1.800</span>
+                                <span class="spec-label">m²</span>
+                            </div>
+                            <div class="spec">
+                                <span class="spec-value">15</span>
+                                <span class="spec-label">Vagas</span>
+                            </div>
+                        </div>
+                        
+                        <div class="property-price">R$ 28.500.000</div>
+                        
+                        <button class="btn-schedule" onclick="agendarVisita('Mansão Vitoriana', 'Cidade Jardim, São Paulo')">
+                            Agende Sua Visita Guiada
+                        </button>
+                    </div>
+                </article>
+
+                <article class="property-card reveal-on-scroll fade-up delay-200" data-features="Pé direito duplo,Spa,Vista" data-location="Ponta da Praia, Santos">
+                    <div class="property-image slow-zoom">
+                        <img src="img/imovel-cobertura.jpg" alt="Cobertura Imperial">
+                    </div>
+                    <div class="property-content">
+                        <h3 class="property-title">Cobertura Imperial</h3>
+                        <p class="property-location">Ponta da Praia, Santos</p>
+                        
+                        <div class="property-features">
+                            <span class="feature-tag">Pé direito duplo</span>
+                            <span class="feature-tag">Spa</span>
+                            <span class="feature-tag">Vista</span>
+                        </div>
+                        
+                        <div class="property-specs">
+                            <div class="spec">
+                                <span class="spec-value">6</span>
+                                <span class="spec-label">Suítes</span>
+                            </div>
+                            <div class="spec">
+                                <span class="spec-value">750</span>
+                                <span class="spec-label">m²</span>
+                            </div>
+                            <div class="spec">
+                                <span class="spec-value">9</span>
+                                <span class="spec-label">Vagas</span>
+                            </div>
+                        </div>
+                        
+                        <div class="property-price">R$ 19.800.000</div>
+                        
+                        <button class="btn-schedule" onclick="agendarVisita('Cobertura Imperial', 'Ponta da Praia, Santos')">
+                            Agende Sua Visita Guiada
+                        </button>
+                    </div>
+                </article>
+
+            </div>
+
+            <div class="no-results" id="noResults" style="display: none;">
+                <p>Nenhuma propriedade encontrada com os critérios selecionados.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section" id="sobre">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title reveal-on-scroll fade-up">Tradição e Excelência</h2>
+                    <div class="divider reveal-on-scroll fade-in delay-100"></div>
+                    <p class="reveal-on-scroll fade-up delay-200">Desde 1892, a Heritage Properties representa o que há de mais refinado no mercado imobiliário brasileiro. Nossa expertise centenária e criteriosa seleção de propriedades garantem aos nossos clientes acesso exclusivo às residências mais distintas do país.</p>
+                    <p class="reveal-on-scroll fade-up delay-300">Atendemos famílias de tradição que valorizam discrição, qualidade arquitetônica e localização privilegiada. Cada propriedade em nosso acervo é cuidadosamente avaliada e representa um patrimônio atemporal.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item reveal-on-scroll fade-up delay-100">
+                        <div class="stat-number">130+</div>
+                        <div class="stat-label">Anos de História</div>
+                    </div>
+                    <div class="stat-item reveal-on-scroll fade-up delay-200">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Famílias Atendidas</div>
+                    </div>
+                    <div class="stat-item reveal-on-scroll fade-up delay-300">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Discrição</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer" id="contato">
+        <div class="container">
+            <div class="footer-content reveal-on-scroll fade-up">
+                <div class="footer-col">
+                    <h3>HERITAGE PROPERTIES</h3>
+                    <p class="footer-tagline">Established 1892</p>
+                    <p class="footer-text">Elegância e tradição no mercado imobiliário de alto padrão.</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contato</h4>
+                    <p>Telefone: (11) 3062-1892</p>
+                    <p>WhatsApp: (11) 99999-1892</p>
+                    <p>contato@heritageproperties.com.br</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Endereço</h4>
+                    <p>Av. Brigadeiro Faria Lima, 1234</p>
+                    <p>Jardim Paulistano</p>
+                    <p>São Paulo - SP, 01452-000</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Horário de Atendimento</h4>
+                    <p>Segunda a Sexta: 9h às 18h</p>
+                    <p>Sábado: 10h às 14h</p>
+                    <p>Atendimento com hora marcada</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Heritage Properties. Todos os direitos reservados. | CRECI 1892-J</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal" id="contactModal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="fecharModal()">&times;</span>
+            <h3 class="modal-title">Agende sua Visita Guiada</h3>
+            <p class="modal-subtitle" id="propertyInfo"></p>
+            
+            <form id="contactForm" onsubmit="enviarWhatsApp(event)">
+                <div class="form-group">
+                    <label>Nome Completo</label>
+                    <input type="text" id="nome" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>E-mail</label>
+                    <input type="email" id="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Telefone / WhatsApp</label>
+                    <input type="tel" id="telefone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Mensagem (opcional)</label>
+                    <textarea id="mensagem" rows="4"></textarea>
+                </div>
+                
+                <button type="submit" class="btn-submit">Enviar via WhatsApp</button>
+                <p class="form-note">Você será redirecionado para nosso WhatsApp corporativo</p>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/search.js"></script>
+    <script src="js/whatsapp.js"></script>
+  <script src="js/animation.js"></script>
+    
+</body>
+</html>

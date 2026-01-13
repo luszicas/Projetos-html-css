@@ -1,0 +1,184 @@
+/* =========================================
+   TABLETS E LAPTOPS PEQUENOS (max-width: 1024px)
+   ========================================= */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 1.5rem; 
+    }
+
+    /* Ajuste de Grids para 2 colunas */
+    .collections-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    /* Sobre nós vira coluna única */
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .about-image {
+        height: 400px;
+    }
+}
+
+/* =========================================
+   CELULARES E TABLETS PEQUENOS (max-width: 768px)
+   ========================================= */
+@media (max-width: 768px) {
+    
+    /* --- CONFIGURAÇÃO DO MENU ANIMADO --- */
+    
+   /* --- MENU HAMBÚRGUER (Versão Premium) --- */
+    
+    /* 1. Botão (Toggler) */
+    .menu-hamburger {
+        display: block;
+        z-index: 1001;
+        font-size: 2rem; /* Ícone um pouco maior */
+        color: var(--cor-primaria); /* Ícone dourado */
+        transition: transform 0.3s ease;
+    }
+
+    /* Efeito ao clicar no ícone (opcional, dá um charme) */
+    
+    /* 2. Cabeçalho */
+    .header-content {
+        flex-direction: row;
+        justify-content: space-between;
+        position: relative;
+    }
+
+    /* 3. A Caixa do Menu (O "Quadrado" agora elegante) */
+    .nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        
+        /* COR E FUNDO: Usando o creme da marca, não branco puro */
+        background-color: var(--cor-fundo); 
+        
+        /* BORDA E ACABAMENTO */
+        border-radius: 20px ; /* Arredonda só embaixo */
+        border-bottom: 3px solid var(--cor-primaria); /* Detalhe dourado no final */
+        box-shadow: 0 20px 40px rgba(0,0,0,0.1) !important; /* Sombra difusa e elegante */
+
+        /* LAYOUT */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: .5rem 0; /* Mais respiro */
+        
+        /* ANIMAÇÃO */
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-20px);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 999;
+    }
+
+    /* Estado Ativo (Aberto) */
+    .nav.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    /* 4. Os Links (Tipografia de Joalheria) */
+    .nav-link {
+        width: 80%; /* Não encosta nas bordas, fica centralizado bonito */
+        text-align: center;
+        padding: 1.2rem 0;
+        
+        /* FONTE SOFISTICADA */
+        font-family: var(--fonte-titulo); /* Usa a Playfair Display */
+        font-size: 1.1rem;
+        letter-spacing: 0.1em; /* Espaçamento chique entre letras */
+        color: var(--cor-texto);
+        
+        /* LINHA DIVISÓRIA SUTIL */
+        border-bottom: 2px solid rgba(212, 175, 55, 0.15); 
+        transition: all 0.3s ease;
+    }
+
+    /* Remove a linha do último item */
+    .nav-link:last-child {
+        border-bottom: none;
+    }
+
+    /* Efeito Hover no Celular */
+    .nav-link:hover {
+        color: var(--cor-primaria);
+        transform: translateX(5px); /* Move levemente para a direita */
+    }
+    /* Remove a borda do último item para ficar mais limpo */
+    .nav-link:last-child {
+        border-bottom: none;
+    }
+
+    /* --- FIM DO MENU --- */
+
+    /* --- Hero Section --- */
+    .hero {
+        height: auto;
+        min-height: 500px;
+        padding: 4rem 0;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    /* --- Seções Gerais --- */
+    .section-header {
+        margin-bottom: 2.5rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .collections, .products, .about, .contact {
+        padding: 3rem 0; 
+    }
+
+    /* --- Grids viram 1 coluna --- */
+    .collections-grid,
+    .products-grid,
+    .contact-grid,
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-card {
+        padding: 1.5rem;
+    }
+}
+
+/* =========================================
+   CELULARES PEQUENOS (max-width: 480px)
+   ========================================= */
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-content {
+        padding: 0 1rem;
+    }
+}

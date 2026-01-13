@@ -1,0 +1,934 @@
+/* === RESET & VARIÁVEIS GLOBAIS === */
+/* #region Global & Variables */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* --- PALETA DE CORES DA MARCA --- */
+    --color-primary: #1B3B5A;  /* Azul Marinho Profundo */
+    --color-accent: #C67B5C;   /* Cobre/Terracota Quente */
+    --color-accent-light: #D99A7F;
+    
+    /* Cores Neutras */
+    --text-dark: var(--color-primary);
+    --text-muted: #5A7085;
+    --white: #ffffff;
+    --bg-light: #F9F7F4;       /* Off-white quente */
+    --bg-medium: #F2EFEB;
+
+    /* --- SOMBRAS PREMIUM --- */
+    --shadow-sm: 0 4px 12px rgba(198, 123, 92, 0.15);
+    --shadow-md: 0 8px 24px rgba(27, 59, 90, 0.12);
+    --shadow-lg: 0 16px 48px rgba(27, 59, 90, 0.18);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+   /* Montserrat para todo o texto do site (limpo e moderno) */
+font-family: 'Montserrat', sans-serif;
+    line-height: 1.7;
+    color: var(--text-dark);
+    background: var(--bg-light);
+    overflow-x: hidden;
+}
+
+/* Títulos com a fonte Playfair Display (Sofisticação) */
+h1, h2, h3, .nav-brand {
+    font-family: 'Playfair Display', serif;
+}
+
+::selection {
+    background: var(--color-accent);
+    color: var(--white);
+}
+/* #endregion */
+
+/* #region Structure */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+/* #endregion */
+
+/* #region Navbar */
+/* === NAVBAR ESTILO IPHONE 15 (Versão Degradê + Mobile) === */
+.navbar {
+    position: fixed;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    width: auto;
+    max-width: 95%; /* Garante que não vaze no mobile */
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0.8rem 2.5rem;
+    border-radius: 100px; /* Formato pílula */
+    
+    /* --- O SEGREDO DO VISUAL --- */
+    background: #fff;
+    
+    /* 1. Borda Degradê */
+    position: relative;
+    border: 2px solid transparent;
+    background-image: linear-gradient(white, white), 
+                      linear-gradient(90deg, var(--color-primary), var(--color-accent));
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+
+    /* 2. Sombras coloridas (Glow) */
+    box-shadow: 
+        -10px 0 25px -5px rgba(27, 59, 90, 0.4),
+        10px 0 25px -5px rgba(198, 123, 92, 0.4),
+        0 10px 40px rgba(0,0,0,0.1);
+}
+
+/* Marca e Logo */
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    letter-spacing: -0.5px;
+    
+    /* Linha divisória vertical */
+    padding-right: 2rem;
+    border-right: 1px solid #ddd;
+    height: 100%;
+}
+
+.nav-logo {
+    height: 40px;
+    width: auto;
+}
+
+/* Menu Desktop */
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin: 0;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: var(--color-accent);
+}
+
+/* === ÍCONE HAMBÚRGUER (Mobile) === */
+.mobile-menu-icon {
+    display: none; /* Escondido no Desktop */
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    margin-left: auto; /* Empurra para a direita se necessário */
+}
+
+.mobile-menu-icon .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-accent);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+/* === ANIMAÇÃO DO ÍCONE === */
+.mobile-menu-icon.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.mobile-menu-icon.active .bar:nth-child(2) {
+    opacity: 0;
+}
+.mobile-menu-icon.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+/* #endregion */
+
+/* #region Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; 
+    background-image: url('../Img/home-elos.png');
+    background-size: cover;
+    background-position: center;
+    text-align: left;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, rgba(12, 15, 19, 0.9) 0%, rgba(19, 48, 77, 0.4) 100%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 0 24px;
+    max-width: 650px;
+    margin-left: 5%;
+}
+
+/* Título com fonte Playfair Display */
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700; 
+    font-size: 3.8rem;
+    margin-bottom: 1.2rem;
+    line-height: 1.1;
+    color: var(--white);
+}
+
+.hero h1 span {
+    color: var(--color-accent);
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.5;
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+    font-weight: 600;
+    color: var(--color-accent-light) !important;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: inline-block;
+}
+/* #endregion */
+
+/* #region Components & Buttons */
+.btn-primary {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: var(--color-accent);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border: 2px solid var(--color-accent);
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(198, 123, 92, 0.4);
+}
+
+.btn-primary:hover {
+    background: transparent;
+    color: var(--color-accent);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(198, 123, 92, 0.6);
+}
+
+/* === SEÇÕES GERAIS === */
+.section {
+    padding: 7rem 0;
+}
+
+.section:nth-child(odd) {
+    background: var(--bg-light);
+}
+
+.section:nth-child(even) {
+    background: var(--bg-medium);
+    border-top: 1px solid rgba(198, 123, 92, 0.1);
+    border-bottom: 1px solid rgba(198, 123, 92, 0.1);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.8rem;
+    color: var(--color-primary);
+    margin-bottom: 3.5rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--color-accent);
+    margin: 1.2rem auto 0;
+    border-radius: 2px;
+}
+
+.section-intro {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    margin-bottom: 4rem;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* #endregion */
+
+/* #region About Section */
+.sobre-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    background: var(--white);
+    padding: 3.5rem;
+    border-radius: 24px;
+    box-shadow: var(--shadow-md);
+    border-bottom: 4px solid var(--color-accent);
+}
+
+/* Estilo geral para todos os parágrafos dentro da caixa */
+.sobre-content p {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    margin-bottom: 1.8rem;
+    color: var(--text-dark);
+}
+
+/* --- NOVO: Destaque apenas para o PRIMEIRO parágrafo --- */
+.sobre-content p:first-child {
+    font-weight: 700; /* Deixa em negrito */
+    color: var(--color-primary); /* Garante o azul marinho forte */
+    font-size: 1.25rem; /* Um pouquinho maior que o resto para destacar mais */
+}
+/* #endregion */
+
+/* #region Psychologists Cards */
+.psychologist-card {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    margin-bottom: 4rem;
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 30px;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.psychologist-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.psychologist-card-reverse {
+    flex-direction: row-reverse;
+}
+
+.psychologist-img {
+    flex: 0 0 380px;
+    position: relative;
+}
+
+.psychologist-img img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 24px;
+    box-shadow: var(--shadow-sm);
+}
+
+.psychologist-img::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: -20px;
+    bottom: -20px;
+    border: 3px solid var(--color-accent);
+    border-radius: 24px;
+    z-index: -1;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.psychologist-card:hover .psychologist-img::after {
+    top: 10px; left: 10px; right: -10px; bottom: -10px;
+    opacity: 1;
+}
+
+.psychologist-info h3 {
+    color: var(--color-primary);
+    font-size: 1.8rem;
+    margin-bottom: 1.2rem;
+    font-weight: 800;
+}
+
+.psychologist-info p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-muted);
+    white-space: pre-line;
+}
+/* #endregion */
+
+/* #region Specialties Grid */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+}
+
+.card {
+    background: var(--white);
+    padding: 3.5rem 2.5rem;
+    border-radius: 24px;
+    box-shadow: var(--shadow-md);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    text-align: center;
+    position: relative;
+    border-top: 4px solid transparent;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+    border-top-color: var(--color-accent);
+}
+
+/* ESTILO DO CÍRCULO DO ÍCONE */
+.card-icon {
+    /* Removemos font-size: 4rem pois não é mais emoji */
+    margin-bottom: 1.5rem;
+    
+    /* A cor do SVG será herdada daqui (Cobre) */
+    color: var(--color-accent); 
+    
+    /* Usamos flex para centralizar perfeitamente o SVG */
+    display: inline-flex; 
+    align-items: center;
+    justify-content: center;
+    
+    background: rgba(198, 123, 92, 0.1); /* Fundo cobre clarinho */
+    
+    /* Tamanho fixo para o círculo ficar perfeito */
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+/* ESTILO ESPECÍFICO PARA O SVG DENTRO DO ÍCONE */
+.card-icon svg {
+    width: 50px; /* Tamanho do desenho dentro do círculo */
+    height: 50px;
+    stroke-width: 1.5; /* Espessura da linha, pode ajustar se quiser mais grosso */
+}
+
+.card h3 {
+    color: var(--color-primary);
+    margin-bottom: 1.2rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.card p {
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+/* #endregion */
+
+/* #region Reasons Grid */
+.reasons-grid {
+    display: grid;
+    /* Mantém o formato retangular/esticadinho que você gostou */
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.reason-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.2rem;
+    
+    background: var(--white);
+    padding: 2rem;
+    
+    /* --- MUDANÇA AQUI: Estilo "Bold" com Borda Esquerda --- */
+    border: none; /* Remove a borda pontilhada */
+    border-radius: 12px; /* Arredonda os cantos */
+    
+    /* A borda grossa e sólida do lado esquerdo (Cobre) */
+    border-left: 6px solid var(--color-accent); 
+    
+    /* Sombra suave para dar o efeito de card "sólido" */
+    box-shadow: var(--shadow-sm);
+    
+    transition: all 0.3s ease;
+}
+
+.reason-item:hover {
+    transform: translateY(-5px);
+    /* No hover, a sombra fica mais forte */
+    box-shadow: var(--shadow-md);
+    background: #fff;
+}
+
+/* Ícone de Check (Setinha) */
+.reason-icon {
+    /* Cor Cobre para combinar com a borda */
+    color: var(--color-accent); 
+    
+    flex-shrink: 0;
+    margin-top: 2px;
+    
+    /* Fundo suave atrás do ícone (opcional, fica chique) */
+    background: rgba(198, 123, 92, 0.1);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+/* Conteúdo do Texto */
+.reason-content h3 {
+    color: var(--color-primary); /* Azul Marinho */
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.reason-content p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+}
+/* #endregion */
+
+/* #region Gallery */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 290px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.4s ease;
+    filter: sepia(20%);
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.03);
+    box-shadow: var(--shadow-md);
+    filter: sepia(0%);
+}
+/* #endregion */
+
+/* #region Testimonials */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 3rem;
+}
+
+.testimonial {
+    background: var(--white);
+    padding: 3rem;
+    border-radius: 24px;
+    box-shadow: var(--shadow-md);
+    position: relative;
+}
+
+.testimonial::before {
+    content: '“';
+    position: absolute;
+    top: 15px;
+    left: 25px;
+    font-size: 5rem;
+    color: rgba(198, 123, 92, 0.2);
+    font-family: serif;
+    z-index: 0;
+}
+
+.testimonial p {
+    font-style: italic;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.testimonial strong {
+    color: var(--color-accent);
+    font-weight: 700;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+/* #endregion */
+
+/* #region Contact Form */
+.contact-wrapper {
+    max-width: 700px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 4rem;
+    border-radius: 30px;
+    box-shadow: var(--shadow-lg);
+}
+
+.form-group {
+    margin-bottom: 2rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.8rem;
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1.2rem;
+    border: 2px solid var(--bg-medium);
+    border-radius: 16px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all 0.3s;
+    background: var(--bg-light);
+    color: var(--text-dark);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    background: var(--white);
+    box-shadow: 0 0 0 4px rgba(198, 123, 92, 0.1);
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 1.2rem;
+    font-size: 1.2rem;
+}
+/* #endregion */
+
+/* #region Footer */
+.footer {
+    background-color: var(--color-primary); /* Fundo Azul Marinho */
+    color: #e2e8f0; /* Texto quase branco para leitura */
+    padding: 5rem 0 2rem;
+    font-size: 0.95rem;
+    border-top: 5px solid var(--color-accent); /* Detalhe Cobre no topo */
+}
+
+.footer-grid {
+    display: grid;
+    /* Colunas responsivas automáticas */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 3rem;
+    margin-bottom: 4rem;
+    align-items: start;
+}
+
+/* Coluna da Marca */
+.brand-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footer-logo {
+    height: 55px; /* Tamanho bom para a logo */
+    width: auto;
+    /* FILTRO MÁGICO: Transforma a logo em BRANCA */
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+}
+
+.footer-tagline {
+    font-style: italic;
+    color: var(--color-accent); /* Frase em Cobre */
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+}
+
+/* Redes Sociais */
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.social-links a {
+    color: var(--white);
+    background: rgba(255, 255, 255, 0.1); /* Bolinha transparente */
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: var(--color-accent); /* Fica Cobre ao passar o mouse */
+    transform: translateY(-3px);
+}
+
+/* Títulos das Colunas */
+.footer h3 {
+    color: var(--color-accent); /* Título em Cobre */
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+/* Listas de Links */
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer ul li {
+    margin-bottom: 0.8rem;
+}
+
+.footer a {
+    color: #e2e8f0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: var(--color-accent);
+    padding-left: 5px; /* Efeitozinho de movimento */
+}
+
+/* --- ESTILO DOS ÍCONES DE CONTATO (Onde estava feio) --- */
+.contact-item {
+    display: flex;
+    align-items: flex-start; /* Alinha ícone com a primeira linha de texto */
+    gap: 12px; /* Espaço entre ícone e texto */
+    margin-bottom: 1.2rem;
+}
+
+.icon-box {
+    /* O ícone agora é COBRE, não vermelho */
+    color: var(--color-accent); 
+    flex-shrink: 0; /* Impede o ícone de amassar */
+    margin-top: 2px; /* Ajuste fino para alinhar com o texto */
+}
+
+.info-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.info-text a, .info-text p {
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Rodapé Final */
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+/* #endregion */
+
+/* #region RESPONSIVE / MOBILE (ALL MEDIA QUERIES) */
+
+/* === TABLET E MOBILE (Max-Width 850px) === */
+@media (max-width: 850px) {
+    /* Navbar ajustada para mobile */
+    .nav-container {
+        padding: 0.8rem 1.5rem;
+        gap: 1rem;
+        width: 300px;
+        justify-content: space-between; /* Logo na esq, ícone na dir */
+    }
+    
+    .nav-brand {
+        font-size: 1.2rem;
+        border-right: none;
+        padding-right: 0;
+    }
+    
+    /* Exibir o ícone do menu */
+    .mobile-menu-icon {
+        display: flex;
+    }
+
+    /* O Menu Dropdown Mobile */
+    .nav-menu {
+        position: absolute;
+        top: 120%; /* Fica logo abaixo da navbar */
+        left: 0;
+        width: 100%;
+        background: #fff;
+        
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        
+        border-radius: 20px;
+        padding: 10px 0;
+        
+        /* Sombra e Borda iguais à navbar principal */
+        box-shadow: 0 10px 30px rgba(27, 59, 90, 0.15);
+        border: 1px solid rgba(198, 123, 92, 0.2);
+        
+        /* Escondido por padrão */
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
+        z-index: 999;
+    }
+
+    /* Classe que o JavaScript ativa */
+    .nav-menu.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    /* Estilo dos links no mobile */
+    .nav-menu li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-menu a {
+        display: block;
+        padding: 15px;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+        width: 100%;
+    }
+    
+    .nav-menu li:last-child a {
+        border-bottom: none;
+    }
+
+    /* Ajustes gerais de layout mobile */
+    .hero { text-align: center; justify-content: center; background-image: url('../Img/home-elosmobile.jpg'); }
+    .hero-content { margin-left: 0; max-width: 800px; padding-top: 80px; } /* Padding extra por causa da navbar fixa */
+    .hero h1 { font-size: 2.8rem; }
+    
+    .psychologist-card, .psychologist-card-reverse { flex-direction: column; text-align: center; gap: 2rem; }
+    .psychologist-img { flex: auto; width: 100%; max-width: 500px; margin: 0 auto; }
+    
+    /* Limitando a altura da imagem no mobile */
+    .psychologist-img img { 
+        height: 350px; /* Altura fixa para não ficar gigante */
+        object-fit: cover; /* Corta o que sobrar */
+        object-position: top center; /* Foca no rosto */
+    }
+    
+    .psychologist-img::after { display: none; }
+    
+    .contact-wrapper { padding: 2rem; }
+    .btn-primary { 
+    width: auto; /* Agora ele terá o tamanho apenas do texto */
+    padding: 0.8rem 2rem; /* Um pouco menos "gordo" nas laterais */
+    font-size: 1rem; /* Fonte levemente menor para harmonizar */
+    margin-top: 10px; /* Um respiro em cima */
+}
+    .footer-grid { text-align: center; }
+    .footer-logo-item { text-align: center; }
+}
+
+/* === MOBILE PEQUENO (Max-Width 600px) === */
+@media (max-width: 600px) {
+    /* Grid de motivos (Reasons) em 1 coluna */
+    .reasons-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .reason-item {
+        padding: 1.5rem;
+    }
+
+    /* Footer empilhado */
+    .footer-grid {
+        /* Empilha tudo em 1 coluna no celular */
+        grid-template-columns: 1fr; 
+        text-align: center; /* Centraliza o texto */
+        gap: 2.5rem;
+    }
+
+    .brand-col, .contact-item {
+        /* Centraliza os itens flex no celular */
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .contact-item {
+        flex-direction: column; /* Ícone em cima do texto no mobile */
+        gap: 8px;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+}
+/* #endregion */
+
+
+
+
+
+
+
+
+
+
+
+
+

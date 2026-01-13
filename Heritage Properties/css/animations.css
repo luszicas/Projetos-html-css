@@ -1,0 +1,144 @@
+/* ==========================================================================
+   ARQUIVO: animations.css
+   CONCEITO: Movimentos Cinematográficos & "Slow Reveal"
+   ========================================================================== */
+
+/* --- VARIÁVEIS DE TEMPO --- */
+:root {
+    --ease-luxury: cubic-bezier(0.215, 0.610, 0.355, 1.000); /* Suave e pesado */
+    --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1); /* Parada muito suave */
+}
+
+/* --- CLASSE MESTRA PARA O SCROLL (Necessária para o JS) --- */
+/* Elementos começam invisíveis e só aparecem quando a classe .visible é adicionada */
+.reveal-on-scroll {
+    opacity: 0;
+    transition: opacity 1s var(--ease-out-expo), transform 1.2s var(--ease-out-expo);
+    will-change: opacity, transform;
+}
+
+/* 1. FADE UP (Padrão para Textos e Cards) */
+/* O elemento sobe levemente enquanto aparece */
+.reveal-on-scroll.fade-up {
+    transform: translateY(60px);
+}
+.reveal-on-scroll.fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 2. FADE IN (Para Imagens de Fundo ou Mapas) */
+/* Apenas aparece suavemente, sem movimento */
+.reveal-on-scroll.fade-in {
+    transform: scale(0.98); /* Leve zoom in */
+}
+.reveal-on-scroll.fade-in.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* 3. TEXT REVEAL (Para Títulos Grandes) */
+/* As letras parecem se "abrir" (tracking) */
+.animate-title {
+    animation: tracking-in-expand 1.5s var(--ease-out-expo) both;
+}
+
+@keyframes tracking-in-expand {
+    0% {
+        letter-spacing: -0.5em;
+        opacity: 0;
+    }
+    40% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 1;
+        letter-spacing: normal; /* Ou o letter-spacing original */
+    }
+}
+
+/* 4. GOLDEN SHIMMER (Para Botões ou Bordas Douradas) */
+/* Um brilho passa pelo elemento */
+.shimmer-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+.shimmer-effect::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.3) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-25deg);
+    animation: shimmer 6s infinite;
+}
+
+@keyframes shimmer {
+    0%, 30% { left: -100%; }
+    100% { left: 200%; }
+}
+
+/* 5. IMAGE ZOOM (Para Imagens de Propriedades) */
+/* A imagem dá um zoom lento constante (Efeito Ken Burns) */
+.slow-zoom {
+    overflow: hidden;
+}
+.slow-zoom img {
+    transition: transform 1.5s var(--ease-out-expo);
+}
+.slow-zoom:hover img {
+    transform: scale(1.08); /* Zoom sutil e elegante */
+}
+
+/* --- DELAYS (Efeito Cascata) --- */
+/* Use isso para cards que aparecem um depois do outro */
+.delay-100 { transition-delay: 0.1s; animation-delay: 0.1s; }
+.delay-200 { transition-delay: 0.2s; animation-delay: 0.2s; }
+.delay-300 { transition-delay: 0.3s; animation-delay: 0.3s; }
+.delay-400 { transition-delay: 0.4s; animation-delay: 0.4s; }
+
+
+
+/* =========================================
+   ANIMAÇÕES DE SCROLL (Adicione ao final do CSS)
+   ========================================= */
+
+/* Estado inicial: Invisível e levemente deslocado para baixo */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    will-change: opacity, visibility;
+}
+
+/* Estado visível: O Javascript adiciona esta classe quando o elemento aparece na tela */
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* --- Variações de Direção (Opcional) --- */
+
+/* Vindo da Esquerda */
+.slide-in-left {
+    transform: translateX(-100px); /* Começa 100px para a esquerda */
+}
+
+/* Vindo da Direita */
+.slide-in-right {
+    transform: translateX(100px); /* Começa 100px para a direita */
+}
+
+/* Quando ficam visíveis, voltam para a posição original (resetando o transform) */
+.slide-in-left.is-visible,
+.slide-in-right.is-visible {
+    transform: translateX(0)
+}

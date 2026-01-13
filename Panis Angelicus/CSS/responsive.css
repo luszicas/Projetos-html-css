@@ -1,0 +1,135 @@
+/* #region Responsivo (Mobile) */
+@media (max-width: 850px) {
+    /* Navbar Ajuste Mobile */
+    .nav-container {
+        min-width: 0 !important; 
+        width: 90% !important;
+        padding: 15px 20px;
+        border-radius: 25px;
+        flex-wrap: wrap; 
+        gap: 0;
+    }
+
+    .logo {
+        border: none;
+        padding: 0;
+        margin: 0;
+        font-size: 1rem;
+        flex-grow: 1;
+    }
+
+    .mobile-menu-icon {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        order: 99; 
+        margin-top: 15px;
+        padding-top: 15px;
+        border-top: 1px solid rgba(212, 175, 55, 0.3);
+        animation: fadeIn 0.4s forwards;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .nav-links li { 
+        width: 100%; 
+        margin-bottom: 5px; 
+    }
+    
+    .nav-links a { 
+        display: block; 
+        padding: 10px; 
+    }
+    
+    .mobile-menu-icon.active .bar:nth-child(2) { opacity: 0; }
+    .mobile-menu-icon.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .mobile-menu-icon.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    /* Carlo Section Ajuste */
+    .carlo-wrapper {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .carlo-text-col {
+        text-align: center;
+    }
+
+    .carlo-text-col p {
+        text-align: center;
+    }
+
+    /* CORREÇÃO DO BOTÃO CARLO ACUTIS */
+    .carlo-text-col .btn-outline {
+        white-space: normal; /* Permite quebra de linha */
+        height: auto; /* Altura se adapta ao texto */
+        padding: 15px 20px;
+        line-height: 1.4;
+        display: inline-block;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h1 { 
+        font-size: 2.2rem;
+    }
+    
+    .hero-content {
+        margin-top: 60px;
+    }
+
+    .bible-quote { 
+        font-size: 1.4rem; 
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Footer Ajuste */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .footer-desc {
+        margin: 0 auto;
+    }
+    
+    /* CORREÇÃO DA NAVEGAÇÃO NO FOOTER */
+    .links-col a {
+        justify-content: center; /* Centraliza o ícone e texto do link flex */
+    }
+
+    .copyright-col {
+        align-items: center;
+        text-align: center;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        padding-top: 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    .quote-box {
+        padding: 40px 15px;
+    }
+    
+    .quote-section blockquote {
+        font-size: 1.4rem;
+        line-height: 1.4;
+    }
+
+    .quote-section blockquote br {
+        display: none;
+    }
+}
+/* #endregion */
